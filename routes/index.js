@@ -1,3 +1,4 @@
+var sha256 = require('../public/javascripts/SHA256.js');
 var express = require('express');
 var router = express.Router();
 
@@ -7,7 +8,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get("/hash/:hashed", function(req, res, next) {
-  res.render("hash", { hashed : req.params.hashed});
+  var result = sha256.sha256(req.params.hashed);
+  res.render("hash", { hashed : result});
 });
 
 router.post("/hash/submit", function(req, res, next) {
