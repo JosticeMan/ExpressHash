@@ -3,7 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  p Enter a text to hash using the SHA-256 algorithm
+  p Enter ASCII text to hash using the SHA-256 algorithm
   form(action="/hash/submit" method="post")
     input(type="text" name="hash")
     button(type="submit") Submit
